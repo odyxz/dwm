@@ -12,8 +12,8 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "xos4 Terminus:size=10" };
-static const char dmenufont[]       = "xos4 Terminus:size=10";
+static const char *fonts[]          = { "xos4 Terminus:size=9" };
+static const char dmenufont[]       = "xos4 Terminus:size=9";
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#333333";
 static const char col_gray3[]       = "#bbbbbb";
@@ -28,7 +28,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1:term", "2:dev", "3:web", "4:docs", "5:irc", "6:file", "7:misc", "8:desk" };
+static const char *tags[] = { "1:term", "2:www", "3:dev", "4:docs", "5:irc", "6:file", "7:misc", "8:desk" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -37,10 +37,10 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     		NULL,       NULL,       0,            1,           -1 },
-	{ "Chromium",		NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "Chromium",		NULL,       NULL,       1 << 1,       0,           -1 },
 //	{ "Zathura",  		NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "code-oss",           NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Emacs",    		NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "code-oss",           NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "Emacs",    		NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "TelegramDesktop",    NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "discord",    	NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Pcmanfm",  		NULL,	    NULL,       1 << 5,       0,           -1 },
