@@ -12,8 +12,8 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "xos4 Terminus:size=9" };
-static const char dmenufont[]       = "xos4 Terminus:size=9";
+static const char *fonts[]          = { "xos4 Terminus:size=10" };
+static const char dmenufont[]       = "xos4 Terminus:size=10";
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#333333";
 static const char col_gray3[]       = "#bbbbbb";
