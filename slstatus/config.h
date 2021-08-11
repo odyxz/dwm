@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 30000;
+const unsigned int interval = 5000;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -65,8 +65,8 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ temp,	    	 "T: %s° | ",		"/sys/class/thermal/thermal_zone0/temp"},
-	{ battery_perc,	 "B: %s%%",		"BAT1"},
-	{ battery_state, " %s | ",		"BAT1"},
+	{ temp,	    	 "T:%s° | ",		"/sys/class/thermal/thermal_zone0/temp"},
+	{ battery_perc,	 "B:%s%%",		"BAT1"},
+	{ battery_state, "%s | ",		"BAT1"},
 	{ datetime,	 "%s",			"%a %d %b %H:%M" },
 };
