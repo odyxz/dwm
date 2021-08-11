@@ -65,8 +65,8 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ temp,	    	 "T:%s° | ",		"/sys/class/thermal/thermal_zone0/temp"},
-	{ battery_perc,	 "B:%s%%",		"BAT1"},
-	{ battery_state, "%s | ",		"BAT1"},
-	{ datetime,	 "%s",			"%a %d %b %H:%M" },
+	{ temp,	    	 "T:%s° ^c#303030^| ^d^",	"/sys/class/thermal/thermal_zone0/temp"},
+	{ battery_perc,	 "B:%s%%",			"BAT1"},
+	{ battery_state, "%s ^c#303030^| ^d^",		"BAT1"},
+	{ datetime,	 "%s",				"%a %d %b %H:%M" },
 };
