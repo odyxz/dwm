@@ -11,4 +11,5 @@ Optional: i3lock-fancy, dunst, picom.
 
 Autostart script should be located in ~/.dwm/autostart.sh
 
-
+![workflow clean](https://github.com/artamudo/dwm/blob/master/screenshots/2021-09-29-133416_scrot.png)
+![workflow dirty](https://github.com/artamudo/dwm/blob/master/screenshots/2021-09-29-133430_scrot.png)
