@@ -11,3 +11,4 @@ Optional: i3lock-fancy, dunst, picom.
 
 Autostart script should be located in ~/.dwm/autostart.sh
 
+
