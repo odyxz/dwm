@@ -1,0 +1,25 @@
+--- slock.c
++++ slock.c
+@@ -14,16 +14,22 @@
+ #include <string.h>
+ #include <unistd.h>
+ #include <sys/types.h>
++#include <fontconfig/fontconfig.h>
+ #include <X11/extensions/Xrandr.h>
++#include <X11/extensions/Xinerama.h>
+ #include <X11/keysym.h>
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
++#include <X11/Xft/Xft.h>
+ 
+ #include "arg.h"
+ #include "util.h"
+ 
+ char *argv0;
+ 
++/* global count to prevent repeated error messages */
++int count_error = 0;
++
+ enum {
+ 	INIT,
+ 	INPUT,
