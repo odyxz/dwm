@@ -148,14 +148,14 @@ static Key keys[] = {
 	{ ShiftMask,                    XK_Print,  spawn,          SHCMD("maim -s ~/Pictures/Screenshots/$(date +%Y-%m-%d-%H%M%S)_scrot.png -u ; notify-send 'Screen captured'") },
 	{ MODKEY,                            XK_Print,  spawn,          SHCMD("maim | xclip -selection clipboard -t image/png ; notify-send 'Screen captured and copied to clipboard'") },
 	{ MODKEY|ShiftMask,                    XK_Print,  spawn,          SHCMD("maim -s -u | xclip -selection clipboard -t image/png ; notify-send 'Screen captured and copied to clipboard'") },
-        { 0,              XF86XK_AudioRaiseVolume, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +1000 ; notify-send --app-name=volume_notifiers Volume: $(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( 1 )) | tail -n 1 | sed -e 's,.* \\([0-9][0-9]*\\)%.*,\\1,')%") },
-        { 0,              XF86XK_AudioLowerVolume, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -1000 ; notify-send --app-name=volume_notifiers Volume: $(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( 1 )) | tail -n 1 | sed -e 's,.* \\([0-9][0-9]*\\)%.*,\\1,' )%")  },
+        { 0,              XF86XK_AudioRaiseVolume, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +1000 ; notify-send -h string:x-dunst-stack-tag:test Volume: $(pactl list sinks | awk '/Volume:/ { print $5 }' | tail -n+$((sink_nr+1)) | head -n1 | cut -d '%' -f 1)%") },
+        { 0,              XF86XK_AudioLowerVolume, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -1000 ; notify-send -h string:x-dunst-stack-tag:test Volume: $(pactl list sinks | awk '/Volume:/ { print $5 }' | tail -n+$((sink_nr+1)) | head -n1 | cut -d '%' -f 1)%")  },
         { 0,              XF86XK_AudioMute,        spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle ; notify-send 'Volume: Mute'") },
-	{ MODKEY,              XK_F3, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +1000 ; notify-send --app-name=volume_notifiers Volume: $(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( 1 )) | tail -n 1 | sed -e 's,.* \\([0-9][0-9]*\\)%.*,\\1,')%") },
-        { MODKEY,              XK_F2, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -1000 ; notify-send --app-name=volume_notifiers Volume: $(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( 1 )) | tail -n 1 | sed -e 's,.* \\([0-9][0-9]*\\)%.*,\\1,' )%")  },
+	{ MODKEY,              XK_F3, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +1000 ; notify-send -h string:x-dunst-stack-tag:test Volume: $(pactl list sinks | awk '/Volume:/ { print $5 }' | tail -n+$((sink_nr+1)) | head -n1 | cut -d '%' -f 1)%") },
+        { MODKEY,              XK_F2, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -1000 ; notify-send -h string:x-dunst-stack-tag:test Volume: $(pactl list sinks | awk '/Volume:/ { print $5 }' | tail -n+$((sink_nr+1)) | head -n1 | cut -d '%' -f 1)%")  },
         { MODKEY,              XK_F1,        spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle ; notify-send 'Volume: Mute'") },
-	{ 0,              XF86XK_MonBrightnessUp,  spawn,          SHCMD("xbacklight -inc 10; notify-send --app-name=brightness_notifiers Brightness: $(xbacklight -get | awk '{print int($1)}')%") },
-	{ 0,              XF86XK_MonBrightnessDown,spawn,          SHCMD("xbacklight -dec 10; notify-send --app-name=brightness_notifiers Brightness: $(xbacklight -get | awk '{print int($1)}')%") },
+	{ 0,              XF86XK_MonBrightnessUp,  spawn,          SHCMD("xbacklight -inc 10; notify-send -h string:x-dunst-stack-tag:test Brightness: $(xbacklight -get | awk '{print int($1)}')%") },
+	{ 0,              XF86XK_MonBrightnessDown,spawn,          SHCMD("xbacklight -dec 10; notify-send -h string:x-dunst-stack-tag:test Brightness: $(xbacklight -get | awk '{print int($1)}')%") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
